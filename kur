@@ -70,12 +70,12 @@ center_multi_text \
   "${W}                        " \
   "${W}  kurulum başlatılıyor  " \
   "${W}                        " \
-  "${W}                        " \
-  "${G}Termux İçin Sanal Linux Ortamı"${W} \
-  "${W}Tarafından yapıldı: ${G}A${R}d${Y}u${C}c${B}a${G}t\n\n"${W} \
-  "${W}                        " \
+  "${W}                        " 
 
-  sleep 5
+  sleep 7
+  clear
+  banner1
+  sleep 4
   clear
 
 
