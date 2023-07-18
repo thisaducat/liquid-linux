@@ -4,14 +4,11 @@ OWNER="thisaducat"
 REPO="liquid-linux"
 FILE_PATH="/liquid_tmp/update.tar.xz"
 API_URL="https://api.github.com/repos/$OWNER/$REPO/releases/latest"
-REMOTE_VERSION=$(curl -s "https://github.com/thisaducat/liquid-linux/version/liquid.ver")
+REMOTE_VERSION=$(curl -s "https://raw.githubusercontent.com/thisaducat/liquid-linux/main/version/liquid.ver")
 LOCAL_VERSION=$(cat /liquid/liquid.ver)
 
 if [[ "$REMOTE_VERSION" != "$LOCAL_VERSION" ]]; then
   echo "Güncelleme bulundu! İndiriliyor.. ($LOCAL_VERSION --> $REMOTE_VERSION)"
-  mkdir /liquid_tmp
-  mkdir /liquid_tmp/update
-  touch /liquid_tmp/update.tar.xz
   sleep 3
 
 
