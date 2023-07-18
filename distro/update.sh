@@ -6,7 +6,7 @@ if [[ "$REMOTE_VERSION" != "$LOCAL_VERSION" ]]; then
   echo "Güncelleme bulundu! İndiriliyor.. ($LOCAL_VERSION --> $REMOTE_VERSION)"
   sleep 3
 
-  curl -s "https://github.com/thisaducat/liquid-linux/releases/download/Li-Update/update.tar.xz" -o /liquid_tmp/updates.tar.xz
+  curl -s "https://github.com/thisaducat/liquid-linux/releases/download/Li-Update/update.tar.xz" -o /liquid_tmp/update.tar.xz
  
 
   echo "İndirme tamamlandı."
