@@ -199,6 +199,16 @@ permission() {
 
 	chmod +x "$PREFIX/bin/liquid"
 
+        cp $CURR_DIR/distro/update.sh $UBUNTU_DIR/bin/update
+
+        chmod +x $UBUNTU_DIR/bin/update
+
+        mkdir $UBUNTU_DIR/liquid
+
+        cp $CURR_DIR/distro/liquid.ver $UBUNTU_DIR/liquid/liquid.ver
+
+        chmod +x $UBUNTU_DIR/liquid/liquid.ver
+
 	termux-reload-settings
 
 	if [[ -e "$PREFIX/bin/liquid" ]]; then
