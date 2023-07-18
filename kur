@@ -16,7 +16,58 @@ CURR_DIR=$(realpath "$(dirname "$BASH_SOURCE")")
 
 UBUNTU_DIR="$PREFIX/var/lib/proot-distro/installed-rootfs/liquid"
 
+#!/bin/bash
+
+# Function to calculate center padding
+center_padding() {
+  local text_width=$1
+  local width=$2
+
+  local padding=$(( (width - text_width) / 2 ))
+  echo $padding
+}
+
+# Function to center the multi-line text on the screen
+center_multi_text() {
+  local lines=("$@")
+  local height=$(tput lines)
+  local width=$(tput cols)
+
+  local total_lines=${#lines[@]}
+  local text_height=$total_lines
+
+  local top_padding=$(( (height - text_height) / 2 ))
+  local max_width=0
+
+  # Find the maximum line width
+  for line in "${lines[@]}"; do
+    line_width=${#line}
+    if ((line_width > max_width)); then
+      max_width=$line_width
+    fi
+  done
+
+  # Calculate left padding for each line and print centered text
+  for ((i = 0; i < total_lines; i++)); do
+    line=${lines[$i]}
+    line_width=${#line}
+    left_padding=$(center_padding $line_width $width)
+    tput cup $((top_padding + i)) $left_padding
+    echo "$line"
+  done
+}
+
+# Example usage
+center_multi_text \
+  "${Y}------------------------" \
+  "${C}|     Liquid-Linux     |" \
+  "${G}------------------------"
+  sleep 5
+
+
 banner() {
+
+
 
 		cat <<- EOF
 
