@@ -58,11 +58,18 @@ center_multi_text() {
 }
 
 # Example usage
+clear
 center_multi_text \
   "${Y}------------------------" \
+  "${W}                        " \
   "${C}|     Liquid-Linux     |" \
-  "${G}------------------------"
+  "${W}                        " \
+  "${G}------------------------" \
+  "${W}                        " \
+  "${W}                        " \
+  "${W}  kurulum başlatılıyor  " 
   sleep 5
+  clear
 
 
 banner() {
