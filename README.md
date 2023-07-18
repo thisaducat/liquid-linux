@@ -8,11 +8,11 @@
 <p align="center">
 <img src="https://img.shields.io/badge/Written%20In-Bash-darkgreen?style=flat-square">
 <img src="https://img.shields.io/badge/Open%20Source-Yes-darkviolet?style=flat-square">
-<img src="https://img.shields.io/github/stars/thisaducat/linux-liquid?style=flat-square">
+<img src="https://img.shields.io/github/stars/thisaducat/liquid-linux?style=flat-square">
 <img src="https://img.shields.io/github/issues/thisaducat/liquid-linux?color=red&style=flat-square">
-<img src="https://img.shields.io/github/forks/thisaducat/linux-liquid?color=teal&style=flat-square">
+<img src="https://img.shields.io/github/forks/thisaducat/liquid-linux?color=teal&style=flat-square">
 </p>
-<p align="center"><b>Virtual Linux Client for Termux</b></p>
+<p align="center"><b>Termux için Sanal Ortam</b></p>
 
 ### Features
 
