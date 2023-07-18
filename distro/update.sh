@@ -14,7 +14,7 @@ if [[ "$REMOTE_VERSION" != "$LOCAL_VERSION" ]]; then
 
 
 API_URL="https://api.github.com/repos/$OWNER/$REPO/releases/latest"
-release_info=$(curl -s $API_URL)
+release_info=$(wget $API_URL)
 download_url=$(echo "$release_info" | grep "browser_download_url" | grep "$FILE_PATH" | cut -d '"' -f 4)
 destination_path="$FILE_PATH"
 
@@ -46,7 +46,7 @@ echo "Download complete."
   rm -rf /liquid_tmp/update
   clear
   
-  echo "Güncelleme tamamlandı! Lütfen Liquid'i yeniden başlatın. (Sürüm: $LOCAL_VERSION)"
+  echo "Güncelleme tamamlandı! Lütfen Liquid'i yeniden başlatın. (Yeni Sürüm: $REMOTE_VERSION)"
 else
-  echo "Güncelleme bulunamadı. (Sürüm: $LOCAL_VERSION)"
+  echo "Güncelleme bulunamadı. (Güncel Sürüm: $LOCAL_VERSION)"
 fi
