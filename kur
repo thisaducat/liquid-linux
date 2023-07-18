@@ -210,8 +210,6 @@ permission() {
         chmod +x $UBUNTU_DIR/liquid/liquid.ver
 
         mkdir $UBUNTU_DIR/liquid_tmp
-        
-        mkdir $UBUNTU_DIR/liquid_tmp/update
 
 	termux-reload-settings
 
