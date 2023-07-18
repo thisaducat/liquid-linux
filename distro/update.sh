@@ -16,7 +16,7 @@ if [[ "$REMOTE_VERSION" != "$LOCAL_VERSION" ]]; then
 API_URL="https://api.github.com/repos/$OWNER/$REPO/releases/latest"
 release_info=$(curl -s $API_URL)
 download_url=$(echo "$release_info" | grep "browser_download_url" | grep "$FILE_PATH" | cut -d '"' -f 4)
-destination_path="/path/to/save/$FILE_PATH"
+destination_path="$FILE_PATH"
 
 wget "$download_url" -O "$destination_path"
 
