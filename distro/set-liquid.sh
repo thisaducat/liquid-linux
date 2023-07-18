@@ -27,9 +27,9 @@ sudo() {
 
 login() {
     banner
-    read -p $' \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;92m Input Username [Lowercase] : \e[0m\e[1;96m\en' user
+    read -p $' \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;92m Kullanıcı Adı [küçük harflerle] : \e[0m\e[1;96m\en' user
     echo -e "${W}"
-    read -p $' \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;92m Input Password : \e[0m\e[1;96m\en' pass
+    read -p $' \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;92m Kullanıcı Şifresi : \e[0m\e[1;96m\en' pass
     echo -e "${W}"
     useradd -m -s $(which bash) ${user}
     usermod -aG sudo ${user}
@@ -40,17 +40,17 @@ login() {
     chmod +x /data/data/com.termux/files/usr/bin/liquid
     
     if [[ -e '/data/data/com.termux/files/home/linux-distro/distro/gui.sh' ]];then
-        cp /data/data/com.termux/files/home/linux-distro/distro/gui.sh /bin/continue-last
-        chmod +x /bin/continue-last
+        cp /data/data/com.termux/files/home/linux-distro/distro/gui.sh /bin/set-gui
+        chmod +x /bin/set-gui
     else
         wget -q --show-progress https://raw.githubusercontent.com/thisaducat/linux-liquid/master/distro/gui.sh
-        mv -vf gui.sh /bin/continue-last
-        chmod +x /bin/continue-last
+        mv -vf gui.sh /bin/set-gui
+        chmod +x /bin/set-gui
     fi
 
     clear
     echo
-    echo -e "\n${R} [${W}-${R}]${G} Restart Liquid & Type ${C}continue-last"${W}
+    echo -e "\n${R} [${W}-${R}]${G} Kurulum tamamlandı! Lütfen Liquid'i yeniden başlatın. Eğer masaüstü ortamını kurmak istiyorsanız yeniden başlattıktan sonra ${R}set-gui ${G}yazın."${W}
     echo
 
 }
