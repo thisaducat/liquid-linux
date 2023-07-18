@@ -14,34 +14,30 @@
 </p>
 <p align="center"><b>Termux için Sanal Ortam</b></p>
 
-### Features
+### Özellikleri
 
-- Fixed Audio Output
-- Lightweight {Requires at least 4GB Storage}
-- 2 Browsers (Chromium & Mozilla Firefox)
-- Supports Bangla Fonts
-- VLC Media Player and MPV media player
-- Visual Studio Code (buggy on arm )
-- Sublime Text Editor (only for arm64/aarch64)
-- Easy for Beginners
-- Comes with some cool themes.
+- Ses Desteği Bulunuyor
+- Hafif {En az 4GB Alanınızın bulunması gerekiyor(Masaüstü ortamı ile) }
+- Font Desteği var
+- Yeni başlayan Kullanıcılar için
 
-### Installation
-- Firstly install [Termux](https://termux.com) apk from [HERE](https://f-droid.org/repo/com.termux_118.apk)
-- Secondly Clone the Repository & Run the setup File
+### Kurulum
+- İlk önce Termux indirmeniz gerekiyor. [BURADAN İNDİRİN](https://f-droid.org/repo/com.termux_118.apk) (Play Store'de bulunan sorunlu)
+- Kurulum dosyalarını indirin & Kurulum dosyasını çalıştırın.
 
-  - `yes | pkg up`
-  - `pkg install git wget -y`
-  - `git clone --depth=1 https://github.com/modded-ubuntu/modded-ubuntu.git`
-  - `cd modded-ubuntu`
-  - `bash setup.sh`
+  - `apt update`
+  - `apt install git wget -y`
+  - `git clone --depth=1 https://github.com/thisaducat/liquid-linux.git`
+  - `cd liquid-linux`
+  - `chmod +x *`
+  - `./kur`
 
-- Then Restart your Termux & Type the following commands
+- Ardından Termux'u yeniden başlatın.
 
-   - `ubuntu`
-   - `bash user.sh`
+   - `liquid`
+   - `set-liquid`
 
-- Type your ubuntu root username. Must be lowercase & no space included.
+- Kullanıcı Adı ve Şifresi girin [Küçük harflerle & Boşluk kullanmadan]
 
 - Then Again Restart your Termux & Type the following commands
 
@@ -70,31 +66,15 @@
 
 - **Type `bash remove.sh` to remove Ubuntu Modded Os**
 
-### Video Tutorial : 
-
-[![Watch the Tutorial](./distro/image1.jpg)](https://mega.nz/embed/QvIC1TLQ#3z27MRNPwANAg6JTtx1Ei8kDouOZsZgk00bg4TsJMNQ!1m)
 
 #
-### Click to see the [Changelog](./CHANGELOG.md)
 Licensed under [Apache License](./LICENSE)
 #
 
-### Credits : 
+### Yapımcı
 
-```
-This Tool Uses the ubuntu image provided by the termux package `proot-distro` 
-
-Full Credit of the Ubuntu image goes to them .
-
-Termux Proot Distro - https://github.com/termux/proot-distro
-```
-
-### Maintainers
-
-- [**Mustakim Ahmed**](https://github.com/BDhackers009)
-- [**Tahmid Rayat**](https://github.com/htr-tech)
-- [**0xBaryonyx**](https://github.com/Mahfuz-THBD)
+- [**Aducat (whycat)**](https://github.com/thisaducat)
 
 
-### If you like our work then dont forget to give a Star :)
+### Çalışmamı beğendiysen lütfen yıldız bırak :)
 
