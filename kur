@@ -16,8 +16,6 @@ CURR_DIR=$(realpath "$(dirname "$BASH_SOURCE")")
 
 UBUNTU_DIR="$PREFIX/var/lib/proot-distro/installed-rootfs/liquid"
 
-#!/bin/bash
-
 # Function to calculate center padding
 center_padding() {
   local text_width=$1
@@ -55,6 +53,9 @@ center_multi_text() {
     tput cup $((top_padding + i)) $left_padding
     echo "$line"
   done
+
+  # Reset the cursor position to continue printing subsequent text normally
+  tput cup $((top_padding + text_height)) 0
 }
 
 # Example usage
