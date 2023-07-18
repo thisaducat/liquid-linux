@@ -72,7 +72,21 @@ center_multi_text \
   clear
 
 
+
 banner() {
+clear
+center_multi_text \
+  "${Y}------------------------" \
+  "${W}                        " \
+  "${C}|     Liquid-Linux     |" \
+  "${W}                        " \
+  "${G}------------------------" \
+  "${W}                        "
+}
+
+
+
+banner1() {
 
 
 
