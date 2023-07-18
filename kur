@@ -68,6 +68,12 @@ center_multi_text \
   "${W}                        " \
   "${W}                        " \
   "${W}  kurulum başlatılıyor  " 
+
+
+
+  echo -e "${G}     Termux İçin Sanal Linux Ortamı"${W}
+  echo -e "     Tarafından yapıldı: ${G}A${R}d${Y}u${C}c${B}a${G}t\n\n"${W}
+
   sleep 5
   clear
 
