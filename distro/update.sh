@@ -1,4 +1,10 @@
 #!/bin/bash
+
+# GitHub repository details
+OWNER="thisaducat"
+REPO="liquid-linux"
+FILE_PATH="/liquid_tmp/update.tar.xz"
+
 REMOTE_VERSION=$(curl -s "https://raw.githubusercontent.com/thisaducat/liquid-linux/main/version/liquid.ver")
 LOCAL_VERSION=$(cat /liquid/liquid.ver)
 
@@ -6,7 +12,15 @@ if [[ "$REMOTE_VERSION" != "$LOCAL_VERSION" ]]; then
   echo "Güncelleme bulundu! İndiriliyor.. ($LOCAL_VERSION --> $REMOTE_VERSION)"
   sleep 3
 
-  curl "https://github.com/thisaducat/liquid-linux/releases/download/Li-Update/update.tar.xz" -o /liquid_tmp/update.tar.xz
+
+API_URL="https://api.github.com/repos/$OWNER/$REPO/releases/latest"
+release_info=$(curl -s $API_URL)
+download_url=$(echo "$release_info" | grep "browser_download_url" | grep "$FILE_PATH" | cut -d '"' -f 4)
+destination_path="/path/to/save/$FILE_PATH"
+
+wget "$download_url" -O "$destination_path"
+
+echo "Download complete."
  
 
   echo "İndirme tamamlandı."
@@ -22,6 +36,7 @@ if [[ "$REMOTE_VERSION" != "$LOCAL_VERSION" ]]; then
   
   echo "Güncellemeler kuruluyor..."
   sleep 3
+  mkdir /liquid_tmp/update
   tar -xvf /liquid_tmp/update.tar.xz -C /liquid_tmp/update/
   chmod +x /liquid_tmp/update/run
   sh /liquid_tmp/update/run
