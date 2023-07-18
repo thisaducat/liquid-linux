@@ -71,7 +71,7 @@ center_multi_text \
   "${W}  kurulum başlatılıyor  " \
   "${W}                        " \
   "${W}                        " \
-  "${G}Termux İçin Sanal Linux Ortamı"${W}
+  "${G}Termux İçin Sanal Linux Ortamı"${W} \
   "Tarafından yapıldı: ${G}A${R}d${Y}u${C}c${B}a${G}t\n\n"${W}
 
   sleep 5
