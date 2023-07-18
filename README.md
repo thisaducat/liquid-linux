@@ -14,6 +14,9 @@
 </p>
 <p align="center"><b>Termux için Sanal Ortam</b></p>
 
+### NOT: LİQUİD HALA YAPIM AŞAMASINDA EĞER HATALAR BULUNUYORSA VEYA ÖNERİLERİNİZ VAR İSE MUTLAKA BENİMLE İLETİŞİME GEÇ :)
+## Discord: whycat#7306
+
 ### Özellikleri
 
 - Ses Desteği Bulunuyor
@@ -39,32 +42,13 @@
 
 - Kullanıcı Adı ve Şifresi girin [Küçük harflerle & Boşluk kullanmadan]
 
-- Then Again Restart your Termux & Type the following commands
-
-   - `ubuntu`
-   - `sudo bash gui.sh`
-
-- **You have to note your VNC password !!**
-
-- Ubuntu image is now successfully installed .
-
-  - Type `vncstart` to run Vncserver
-  - Type `vncstop` to stop Vncserver
-
-- Install VNC VIEWER Apk on your Device. [Google Play Store](https://play.google.com/store/apps/details?id=com.realvnc.viewer.android&hl=en)
-
-- Open VNC VIEWER & Click on + Button & Enter the Address `localhost:1` & Name anything you like
-- Set the Picture Quality to High for better Quality
-- Click on Connect & Input the Password 
-- Enjoy :D
+- Ardından Liquid'i yeniden başlat ve her şey hazır :)
 
 ### NOTE :
 
-- **Type `ubuntu` to run Ubuntu CLI.**
-- **Type `vncstart` to run Vncserver**
-- **Type `vncstop` to stop Vncserver**
+- **Liquid'i güncellemek için `update` komutunu kullanın.**
 
-- **Type `bash remove.sh` to remove Ubuntu Modded Os**
+- **Kaldırmak için `./sil` komutunu yazın.**
 
 
 #
