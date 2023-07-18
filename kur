@@ -212,8 +212,6 @@ permission() {
         mkdir $UBUNTU_DIR/liquid_tmp
         
         mkdir $UBUNTU_DIR/liquid_tmp/update
-        
-        touch $UBUNTU_DIR/liquid_tmp/update.tar.xz
 
 	termux-reload-settings
 
