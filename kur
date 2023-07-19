@@ -287,6 +287,10 @@ permission() {
 
         mkdir $UBUNTU_DIR/liquid_tmp
 
+        cp $CURR_DIR/distro/gui.sh $UBUNTU_DIR/bin/set-gui
+
+        chmod +x $UBUNTU_DIR/bin/set-gui
+
 	termux-reload-settings
 
 	if [[ -e "$PREFIX/bin/liquid" ]]; then
