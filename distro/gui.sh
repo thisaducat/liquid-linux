@@ -10,7 +10,7 @@ username=$(getent group sudo | awk -F ':' '{print $4}' | cut -d ',' -f1)
 
 check_root(){
 	if [ "$(id -u)" -ne 0 ]; then
-		echo -ne " ${R}Run this program as root!\n\n"${W}
+		echo -ne " ${R}Bu komut root izni gerektiriyor!\n\n"${W}
 		exit 1
 	fi
 }
@@ -27,29 +27,19 @@ banner() {
 
 note() {
 	banner
-	echo -e " ${G} [-] Successfully Installed !\n"${W}
+	echo -e " ${G} [-] Masaüstü ortamı Başarılı bir şekilde kuruldu !\n"${W}
 	sleep 1
 	cat <<- EOF
-		 ${G}[-] Type ${C}vncstart${G} to run Vncserver.
-		 ${G}[-] Type ${C}vncstop${G} to stop Vncserver.
+		 ${G}[-] Masaüstü ortamını başlatmak için ${C}libaslat${G} yazın.
+		 ${G}[-] Masaüstü ortamını kapatmak için ${C}likapat${G} yazın.
 
-		 ${C}Install VNC VIEWER Apk on your Device.
-
-		 ${C}Open VNC VIEWER & Click on + Button.
-
-		 ${C}Enter the Address localhost:1 & Name anything you like.
-
-		 ${C}Set the Picture Quality to High for better Quality.
-
-		 ${C}Click on Connect & Input the Password.
-
-		 ${C}Enjoy :D${W}
+		 ${C}Masaüstü ortamının tadını çıkar :)${W}
 	EOF
 }
 
 package() {
 	banner
-	echo -e "${R} [${W}-${R}]${C} Checking required packages..."${W}
+	echo -e "${R} [${W}-${R}]${C} Paketler kontrol ediliyor.."${W}
 	apt-get update -y
 	apt install udisks2 -y
 	rm /var/lib/dpkg/info/udisks2.postinst
@@ -60,7 +50,7 @@ package() {
 	packs=(sudo gnupg2 curl nano git xz-utils at-spi2-core xfce4 xfce4-goodies xfce4-terminal librsvg2-common menu inetutils-tools dialog exo-utils tigervnc-standalone-server tigervnc-common tigervnc-tools dbus-x11 fonts-beng fonts-beng-extra gtk2-engines-murrine gtk2-engines-pixbuf apt-transport-https)
 	for hulu in "${packs[@]}"; do
 		type -p "$hulu" &>/dev/null || {
-			echo -e "\n${R} [${W}-${R}]${G} Installing package : ${Y}$hulu${W}"
+			echo -e "\n${R} [${W}-${R}]${G} Şu paket kuruluyor : ${Y}$hulu${W}"
 			apt-get install "$hulu" -y --no-install-recommends
 		}
 	done
@@ -71,41 +61,41 @@ package() {
 
 install_apt() {
 	for apt in "$@"; do
-		[[ `command -v $apt` ]] && echo "${Y}${apt} is already Installed!${W}" || {
-			echo -e "${G}Installing ${Y}${apt}${W}"
+		[[ `command -v $apt` ]] && echo "${Y}${apt} bu paket zaten kurulu!${W}" || {
+			echo -e "${G}İndiriliyor: ${Y}${apt}${W}"
 			apt install -y ${apt}
 		}
 	done
 }
 
 install_vscode() {
-	[[ $(command -v code) ]] && echo "${Y}VSCode is already Installed!${W}" || {
-		echo -e "${G}Installing ${Y}VSCode${W}"
+	[[ $(command -v code) ]] && echo "${Y}VSCode zaten yüklü!${W}" || {
+		echo -e "${G}Yükleniyor: ${Y}VSCode${W}"
 		curl -fsSL https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
 		install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/
 		echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list
 		apt update -y
 		apt install code -y
-		echo "Patching.."
-		curl -fsSL https://raw.githubusercontent.com/modded-ubuntu/modded-ubuntu/master/patches/code.desktop > /usr/share/applications/code.desktop
-		echo -e "${C} Visual Studio Code Installed Successfully\n${W}"
+		echo "Yamalanıyor.!."
+		curl -fsSL https://raw.githubusercontent.com/thisaducat/liquid-linux/master/distro/VSCode.desktop > /usr/share/applications/VSCode.desktop
+		echo -e "${C} Visual Studio Code Başarıyla yüklendi!\n${W}"
 	}
 }
 
 install_sublime() {
-	[[ $(command -v subl) ]] && echo "${Y}Sublime is already Installed!${W}" || {
+	[[ $(command -v subl) ]] && echo "${Y}Sublime Text zaten kurulu!${W}" || {
 		apt install gnupg2 software-properties-common --no-install-recommends -y
 		echo "deb https://download.sublimetext.com/ apt/stable/" | tee /etc/apt/sources.list.d/sublime-text.list
 		curl -fsSL https://download.sublimetext.com/sublimehq-pub.gpg | gpg --dearmor > /etc/apt/trusted.gpg.d/sublime.gpg 2> /dev/null
 		apt update -y
 		apt install sublime-text -y 
-		echo -e "${C} Sublime Text Editor Installed Successfully\n${W}"
+		echo -e "${C} Sublime Text Editor Başarıyla yüklendi!\n${W}"
 	}
 }
 
 install_chromium() {
-	[[ $(command -v chromium) ]] && echo "${Y}Chromium is already Installed!${W}\n" || {
-		echo -e "${G}Installing ${Y}Chromium${W}"
+	[[ $(command -v chromium) ]] && echo "${Y}Chromium zaten yüklü!${W}\n" || {
+		echo -e "${G}Kuruluyor: ${Y}Chromium${W}"
 		apt purge chromium* chromium-browser* snapd -y
 		apt install gnupg2 software-properties-common --no-install-recommends -y
 		echo -e "deb http://ftp.debian.org/debian buster main\ndeb http://ftp.debian.org/debian buster-updates main" >> /etc/apt/sources.list
@@ -116,56 +106,56 @@ install_chromium() {
 		apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 3B4FE6ACC0B21F32
 		apt update -y
 		apt install chromium -y
-		sed -i 's/chromium %U/chromium --no-sandbox %U/g' /usr/share/applications/chromium.desktop
-		echo -e "${G} Chromium Installed Successfully\n${W}"
+		sed -i 's/chromium %U/chromium --no-sandbox %U/g' /usr/share/applications/Chromium.desktop
+		echo -e "${G} Chromium Başarıyla yüklendi!\n${W}"
 	}
 }
 
 install_firefox() {
-	[[ $(command -v firefox) ]] && echo "${Y}Firefox is already Installed!${W}\n" || {
-		echo -e "${G}Installing ${Y}Firefox${W}"
-		bash <(curl -fsSL "https://raw.githubusercontent.com/modded-ubuntu/modded-ubuntu/master/distro/firefox.sh")
-		echo -e "${G} Firefox Installed Successfully\n${W}"
+	[[ $(command -v firefox) ]] && echo "${Y}Firefox zaten yüklü!${W}\n" || {
+		echo -e "${G}Kuruluyor: ${Y}Firefox${W}"
+		bash <(curl -fsSL "https://raw.githubusercontent.com/thisaducat/liquid-linux/master/distro/firefox.sh")
+		echo -e "${G} Firefox Başarıyla kuruldu!\n${W}"
 	}
 }
 
 install_softwares() {
 	banner
 	cat <<- EOF
-		${Y} ---${G} Select Browser ${Y}---
+		${Y} ---${G} İnternet Tarayıcı ${Y}---
 
-		${C} [${W}1${C}] Firefox (Default)
+		${C} [${W}1${C}] Firefox (Varsayılan)
 		${C} [${W}2${C}] Chromium
-		${C} [${W}3${C}] Both (Firefox + Chromium)
+		${C} [${W}3${C}] Hepsi (Firefox + Chromium)
 
 	EOF
-	read -n1 -p "${R} [${G}~${R}]${Y} Select an Option: ${G}" BROWSER_OPTION
+	read -n1 -p "${R} [${G}~${R}]${Y} ?: ${G}" BROWSER_OPTION
 	banner
 
 	[[ ("$arch" != 'armhf') || ("$arch" != *'armv7'*) ]] && {
 		cat <<- EOF
-			${Y} ---${G} Select IDE ${Y}---
+			${Y} ---${G} Metin Düzenleyici ${Y}---
 
-			${C} [${W}1${C}] Sublime Text Editor (Recommended)
-			${C} [${W}2${C}] Visual Studio Code
-			${C} [${W}3${C}] Both (Sublime + VSCode)
-			${C} [${W}4${C}] Skip! (Default)
+			${C} [${W}1${C}] Sublime Text Editor (Önerilen)
+			${C} [${W}2${C}] Visual Studio Code (Cihazınızın mimarisiyle uyumsuz olabilir!)
+			${C} [${W}3${C}] Hepsi (Sublime + VSCode)
+			${C} [${W}4${C}] Hiçbirisi (Varsayılan)
 
 		EOF
-		read -n1 -p "${R} [${G}~${R}]${Y} Select an Option: ${G}" IDE_OPTION
+		read -n1 -p "${R} [${G}~${R}]${Y} ?: ${G}" IDE_OPTION
 		banner
 	}
 	
 	cat <<- EOF
-		${Y} ---${G} Media Player ${Y}---
+		${Y} ---${G} Media Oynatıcı ${Y}---
 
-		${C} [${W}1${C}] MPV Media Player (Recommended)
-		${C} [${W}2${C}] VLC Media Player
-		${C} [${W}3${C}] Both (MPV + VLC)
-		${C} [${W}4${C}] Skip! (Default)
+		${C} [${W}1${C}] MPV Media Player 
+		${C} [${W}2${C}] VLC Media Player (Önerilen)
+		${C} [${W}3${C}] Hepsi (MPV + VLC)
+		${C} [${W}4${C}] Hiçbirisi (Varsayılan)
 
 	EOF
-	read -n1 -p "${R} [${G}~${R}]${Y} Select an Option: ${G}" PLAYER_OPTION
+	read -n1 -p "${R} [${G}~${R}]${Y} ?: ${G}" PLAYER_OPTION
 	{ banner; sleep 1; }
 
 	if [[ ${BROWSER_OPTION} == 2 ]]; then
@@ -186,7 +176,7 @@ install_softwares() {
 			install_sublime
 			install_vscode
 		else
-			echo -e "${Y} [!] Skipping IDE Installation\n"
+			echo -e "${Y} [!] Metin düzenleyici kurulumu atlandı!\n"
 			sleep 1
 		fi
 	}
@@ -198,7 +188,7 @@ install_softwares() {
 	elif [[ ${PLAYER_OPTION} == 3 ]]; then
 		install_apt "mpv" "vlc"
 	else
-		echo -e "${Y} [!] Skipping Media Player Installation\n"
+		echo -e "${Y} [!] Medya oynatıcı kurulumu atlandı!\n"
 		sleep 1
 	fi
 
@@ -214,7 +204,7 @@ downloader(){
 }
 
 sound_fix() {
-	echo "$(echo "bash ~/.sound" | cat - /data/data/com.termux/files/usr/bin/ubuntu)" > /data/data/com.termux/files/usr/bin/ubuntu
+	echo "$(echo "bash ~/.sound" | cat - /data/data/com.termux/files/usr/bin/liquid)" > /data/data/com.termux/files/usr/bin/liquid
 	echo "export DISPLAY=":1"" >> /etc/profile
 	echo "export PULSE_SERVER=127.0.0.1" >> /etc/profile 
 	source /etc/profile
@@ -249,29 +239,29 @@ config() {
 	temp_folder=$(mktemp -d -p "$HOME")
 	{ banner; sleep 1; cd $temp_folder; }
 
-	echo -e "${R} [${W}-${R}]${C} Downloading Required Files..\n"${W}
+	echo -e "${R} [${W}-${R}]${C} Gerekli dosyalar indiriliyor..\n"${W}
 	downloader "fonts.tar.gz" "https://github.com/modded-ubuntu/modded-ubuntu/releases/download/config/fonts.tar.gz"
 	downloader "icons.tar.gz" "https://github.com/modded-ubuntu/modded-ubuntu/releases/download/config/icons.tar.gz"
 	downloader "wallpaper.tar.gz" "https://github.com/modded-ubuntu/modded-ubuntu/releases/download/config/wallpaper.tar.gz"
-	downloader "gtk-themes.tar.gz" "https://github.com/modded-ubuntu/modded-ubuntu/releases/download/config/gtk-themes.tar.gz"
-	downloader "ubuntu-settings.tar.gz" "https://github.com/modded-ubuntu/modded-ubuntu/releases/download/config/ubuntu-settings.tar.gz"
+	downloader "gtk.tar.gz" "https://github.com/thisaducat/liquid-linux/releases/download/Liquid-DATA/gtk.tar.gz"
+	downloader "liquid-set.tar.gz" "https://github.com/thisaducat/liquid-linux/releases/download/Liquid-DATA/liquid-set.tar.gz"
 
 	echo -e "${R} [${W}-${R}]${C} Unpacking Files..\n"${W}
 	tar -xvzf fonts.tar.gz -C "/usr/local/share/fonts/"
 	tar -xvzf icons.tar.gz -C "/usr/share/icons/"
 	tar -xvzf wallpaper.tar.gz -C "/usr/share/backgrounds/xfce/"
-	tar -xvzf gtk-themes.tar.gz -C "/usr/share/themes/"
-	tar -xvzf ubuntu-settings.tar.gz -C "/home/$username/"	
+	tar -xvzf gtk.tar.gz -C "/usr/share/themes/"
+	tar -xvzf liquid-set.tar.gz -C "/home/$username/"	
 	rm -fr $temp_folder
 
-	echo -e "${R} [${W}-${R}]${C} Purging Unnecessary Files.."${W}
+	echo -e "${R} [${W}-${R}]${C} Gereksiz dosyalar parçalanıyor.."${W}
 	rem_theme
 	rem_icon
 
-	echo -e "${R} [${W}-${R}]${C} Rebuilding Font Cache..\n"${W}
+	echo -e "${R} [${W}-${R}]${C} Yazı tipi önbelleği yeniden oluşturuyor..\n"${W}
 	fc-cache -fv
 
-	echo -e "${R} [${W}-${R}]${C} Upgrading the System..\n"${W}
+	echo -e "${R} [${W}-${R}]${C} Paketler güncelleniyor..\n"${W}
 	apt update
 	yes | apt upgrade
 	apt clean
