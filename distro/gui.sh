@@ -197,7 +197,7 @@ install_softwares() {
 downloader(){
 	path="$1"
 	[[ -e "$path" ]] && rm -rf "$path"
-	echo "Downloading $(basename $1)..."
+	echo "Yükleniyor: $(basename $1)..."
 	curl --progress-bar --insecure --fail \
 		 --retry-connrefused --retry 3 --retry-delay 2 \
 		  --location --output ${path} "$2"
