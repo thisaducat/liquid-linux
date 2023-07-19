@@ -77,7 +77,7 @@ install_vscode() {
 		apt update -y
 		apt install code -y
 		echo "Yamalanıyor.!."
-		curl -fsSL https://raw.githubusercontent.com/thisaducat/liquid-linux/master/distro/VSCode.desktop > /usr/share/applications/VSCode.desktop
+		wget https://raw.githubusercontent.com/thisaducat/liquid-linux/master/distro/VSCode.desktop > /usr/share/applications/VSCode.desktop
 		echo -e "${C} Visual Studio Code Başarıyla yüklendi!\n${W}"
 	}
 }
