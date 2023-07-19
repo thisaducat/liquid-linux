@@ -29,7 +29,7 @@
 - Kurulum dosyalarını indirin & Kurulum dosyasını çalıştırın.
 
   - `apt update`
-  - `apt install git wget -y`
+  - `apt install git wget ncurses-utils -y`
   - `git clone --depth=1 https://github.com/thisaducat/liquid-linux.git`
   - `cd liquid-linux`
   - `chmod +x *`
