@@ -19,7 +19,7 @@
 
 ### Özellikleri
 
-- Ses Desteği Bulunuyor
+- Ses Desteği Bulunuyor (Masaüstü ortamı ile)
 - Hafif {En az 4GB Alanınızın bulunması gerekiyor(Masaüstü ortamı ile) }
 - Font Desteği var
 - Yeni başlayan Kullanıcılar için
@@ -41,6 +41,10 @@
    - `set-liquid`
 
 - Kullanıcı Adı ve Şifresi girin [Küçük harflerle & Boşluk kullanmadan]
+
+- Liquid'i yeniden başlatın. Şu komutu yazın:
+
+- `set-gui`
 
 - Ardından Liquid'i yeniden başlat ve her şey hazır :)
 
