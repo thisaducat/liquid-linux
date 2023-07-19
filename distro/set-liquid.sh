@@ -35,15 +35,18 @@ login() {
     usermod -aG sudo ${user}
     echo "${user}:${pass}" | chpasswd
     echo "$user ALL=(ALL:ALL) NOPASSWD:ALL" >> /etc/sudoers
-    cp /root/.bashrc /home/$user/.bashrc
-    echo "proot-distro login --user $user liquid --bind /dev/null:/proc/sys/kernel/cap_last_last --shared-tmp --fix-low-ports" > /data/data/com.termux/files/usr/bin/liquid
+    echo "proot-distro login --user $user liquid --bind /dev/null:/proc/sys/kernel/cap_last_last --shared-tmp --fix-low-ports" >> /data/data/com.termux/files/usr/bin/liquid
     chmod +x /data/data/com.termux/files/usr/bin/liquid
+    mkdir "/home/$user/.config"
+    mkdir "/home/$user/.config/neofetch"
+    cp "/data/data/com.termux/files/home/liquid-linux/distro/logo "/liquid/logo"
+    cp "/data/data/com.termux/files/home/liquid-linux/distro/config.conf" "/home/$user/.config/neofetch/config.conf"
     
     if [[ -e '/data/data/com.termux/files/home/linux-distro/distro/gui.sh' ]];then
-        cp /data/data/com.termux/files/home/linux-distro/distro/gui.sh /bin/set-gui
+        cp /data/data/com.termux/files/home/liquid-linux/distro/gui.sh /bin/set-gui
         chmod +x /bin/set-gui
     else
-        wget -q --show-progress https://raw.githubusercontent.com/thisaducat/linux-liquid/master/distro/gui.sh
+        wget -q --show-progress https://raw.githubusercontent.com/thisaducat/liquid-linux/master/distro/gui.sh
         mv -vf gui.sh /bin/set-gui
         chmod +x /bin/set-gui
     fi
