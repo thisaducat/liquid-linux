@@ -39,7 +39,7 @@ login() {
     chmod +x /data/data/com.termux/files/usr/bin/liquid
     mkdir "/home/$user/.config"
     mkdir "/home/$user/.config/neofetch"
-    cp "/data/data/com.termux/files/home/liquid-linux/distro/logo "/liquid/logo"
+    cp "/data/data/com.termux/files/home/liquid-linux/distro/logo" "/liquid/logo"
     cp "/data/data/com.termux/files/home/liquid-linux/distro/config.conf" "/home/$user/.config/neofetch/config.conf"
     
     if [[ -e '/data/data/com.termux/files/home/linux-distro/distro/gui.sh' ]];then
