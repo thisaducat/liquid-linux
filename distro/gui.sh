@@ -241,7 +241,7 @@ config() {
 
 	echo -e "${R} [${W}-${R}]${C} Gerekli dosyalar indiriliyor..\n"${W}
 	downloader "fonts.tar.gz" "https://github.com/modded-ubuntu/modded-ubuntu/releases/download/config/fonts.tar.gz"
-	downloader "icons.tar.gz" "https://github.com/modded-ubuntu/modded-ubuntu/releases/download/config/icons.tar.gz"
+	downloader "icons.tar.gz" "https://github.com/thisaducat/liquid-linux/releases/download/Liquid-DATA/icons.tar.gz"
 	downloader "wallpaper.tar.gz" "https://github.com/modded-ubuntu/modded-ubuntu/releases/download/config/wallpaper.tar.gz"
 	downloader "gtk.tar.gz" "https://github.com/thisaducat/liquid-linux/releases/download/Liquid-DATA/gtk.tar.gz"
 	downloader "liquid-set.tar.gz" "https://github.com/thisaducat/liquid-linux/releases/download/Liquid-DATA/liquid-set.tar.gz"
