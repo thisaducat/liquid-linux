@@ -48,7 +48,7 @@
 
 - Ardından Liquid'i yeniden başlat ve her şey hazır :)
 
-### NOTE :
+### NOT :
 
 - **Liquid'i güncellemek için `update` komutunu kullanın.**
 
