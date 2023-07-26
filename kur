@@ -291,6 +291,16 @@ permission() {
 
         chmod +x $UBUNTU_DIR/bin/set-gui
 
+        pkg install x11-repo
+
+        pkg install xwayland xorg-server-xvfb
+
+        dpkg -i $CURR_DIR/distro/termux-x11.deb
+
+        cp $CURR_DIR/distro/termux.properties $HOME/.termux/termux.properties
+
+        echo 'export DISPLAY=:0' >> $HOME/.bashrc
+
 	termux-reload-settings
 
 	if [[ -e "$PREFIX/bin/liquid" ]]; then
