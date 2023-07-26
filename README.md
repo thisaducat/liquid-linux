@@ -19,6 +19,7 @@
 
 ### Özellikleri
 
+- Grafik hızlandırması bulunuyor. (Hardware Acceleration [3D]-[X11])
 - Ses Desteği Bulunuyor (Masaüstü ortamı ile)
 - Hafif {En az 4GB Alanınızın bulunması gerekiyor(Masaüstü ortamı ile) }
 - Font Desteği var
