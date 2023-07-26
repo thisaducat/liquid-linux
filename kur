@@ -241,9 +241,23 @@ setup_vnc() {
 
 	fi
 
+if [[ -d "$CURR_DIR/distro" ]] && [[ -e "$CURR_DIR/distro/libaslat3d" ]]; then
+
+		cp -f "$CURR_DIR/distro/libaslat3d" "$UBUNTU_DIR/usr/local/bin/libaslat3d"
+
+	else
+
+		downloader "$CURR_DIR/libaslat3d" "https://raw.githubusercontent.com/thisaducat/liux-liquid/master/distro/libaslat3d"
+
+		mv -f "$CURR_DIR/libaslat3d" "$UBUNTU_DIR/usr/local/bin/libaslat3d"
+
+	fi
+
 	chmod +x "$UBUNTU_DIR/usr/local/bin/libaslat"
 
 	chmod +x "$UBUNTU_DIR/usr/local/bin/likapat"
+
+        chmod +x "$UBUNTU_DIR/usr/local/bin/libaslat3d"
 
 }
 
