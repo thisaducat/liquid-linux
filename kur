@@ -295,7 +295,7 @@ permission() {
 
         pkg install xwayland xorg-server-xvfb
 
-        dpkg -i $CURR_DIR/distro/termux-x11.deb
+        dpkg -i $CURR_DIR/distro/termux-x11-nightly-1.02.12-0-all.deb
 
         cp $CURR_DIR/distro/termux.properties $HOME/.termux/termux.properties
 
