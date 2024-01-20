@@ -20,7 +20,7 @@ sudo() {
     echo -e "\n${R} [${W}-${R}]${C} Kuruluyor: sudo"${W}
     apt update -y
     apt install sudo -y
-    apt install wget apt-utils locales-all dialog tzdata -y
+    apt install wget apt-utils locales-all dialog systemd tzdata -y
     echo -e "\n${R} [${W}-${R}]${G} Sudo Kuruldu !"${W}
 
 }
