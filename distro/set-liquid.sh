@@ -44,6 +44,7 @@ login() {
     cp "/data/data/com.termux/files/home/liquid-linux/distro/boot" "/liquid/boot"
     echo "clear" > "/home/$user/.bashrc"
     echo "/liquid/boot" > "/home/$user/.bashrc"
+    chmod +x "/liquid/boot"
     cp "/data/data/com.termux/files/home/liquid-linux/distro/config.conf" "/home/$user/.config/neofetch/config.conf"
     
     if [[ -e '/data/data/com.termux/files/home/linux-distro/distro/gui.sh' ]];then
