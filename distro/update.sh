@@ -9,7 +9,14 @@ REMOTE_VERSION=$(curl -s "https://raw.githubusercontent.com/thisaducat/liquid-li
 LOCAL_VERSION=$(cat /liquid/liquid.ver)
 
 if [[ "$REMOTE_VERSION" != "$LOCAL_VERSION" ]]; then
-  echo "Güncelleme bulundu! İndiriliyor.. ($LOCAL_VERSION --> $REMOTE_VERSION)"
+  while true; do
+    read -p "Güncelleme bulundu. İndirmek istiyor musunuz? [E/H] -- ($LOCAL_VERSION --> $REMOTE_VERSION) " yn
+    case $yn in
+        [Ee]* ) break;;
+        [Hh]* ) exit;;
+        * ) echo "Yanlış."; exit;;
+    esac
+done
   sleep 3
 
 
