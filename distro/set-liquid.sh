@@ -20,7 +20,7 @@ sudo() {
     echo -e "\n${R} [${W}-${R}]${C} Kuruluyor: sudo"${W}
     apt update -y
     apt install sudo -y
-    apt install wget apt-utils locales-all dialog systemd tzdata -y
+    apt install wget apt-utils locales-all dialog tzdata -y
     echo -e "\n${R} [${W}-${R}]${G} Sudo Kuruldu !"${W}
 
 }
@@ -42,8 +42,9 @@ login() {
     mkdir "/home/$user/.config/neofetch"
     cp "/data/data/com.termux/files/home/liquid-linux/distro/logo" "/liquid/logo"
     cp "/data/data/com.termux/files/home/liquid-linux/distro/boot" "/liquid/boot"
+    echo "clear" > "/home/$user/.bashrc"
+    echo "/liquid/boot" > "/home/$user/.bashrc"
     cp "/data/data/com.termux/files/home/liquid-linux/distro/config.conf" "/home/$user/.config/neofetch/config.conf"
-    systemctl enable liquid-boot.service
     
     if [[ -e '/data/data/com.termux/files/home/linux-distro/distro/gui.sh' ]];then
         cp /data/data/com.termux/files/home/liquid-linux/distro/gui.sh /bin/set-gui
