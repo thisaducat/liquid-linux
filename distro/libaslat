@@ -41,7 +41,7 @@ else
             dbus-launch vncserver -geometry 1440x720 -depth 24 -zliblevel 0 -name LiquidOS -xstartup /usr/bin/icewm
             ;;
         *)
-            echo "Seçim yanlış..."
+            echo ""
             ;;
     esac
 fi
