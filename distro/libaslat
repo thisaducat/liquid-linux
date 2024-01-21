@@ -35,7 +35,11 @@ else
             dbus-launch vncserver -geometry 1440x720 -depth 24 -zliblevel 0 -name LiquidOS -xstartup /usr/bin/xfce4-session
             ;;
         "gnome")
-            echo "You selected KDE."
+            export DISPLAY=:0
+            export XDG_CURRENT_DIR=GNOME
+
+            service dbus start
+            gnome-shell --x11
             ;;
         "icewm")
             dbus-launch vncserver -geometry 1440x720 -depth 24 -zliblevel 0 -name LiquidOS -xstartup /usr/bin/icewm
