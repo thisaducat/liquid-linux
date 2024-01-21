@@ -20,7 +20,7 @@
 ### Özellikleri
 
 - Grafik hızlandırması bulunuyor. (Hardware Acceleration [3D]-[X11])
-- Ses Desteği Bulunuyor (Masaüstü ortamı ile)
+- - Ses Desteği Bulunuyor (Masaüstü ortamı ile)
 - Hafif {En az 4GB Alanınızın bulunması gerekiyor(Masaüstü ortamı ile) }
 - Font Desteği var
 - Yeni başlayan Kullanıcılar için
@@ -50,6 +50,10 @@
 - Ardından Liquid'i yeniden başlat ve her şey hazır :)
 
 ### NOT :
+
+ÖNEMLİ: Kurulum, masaüstü ortamını seçip yükledikten sonra tekrar masaüstü ortamı seçme kısmına atıyor oradan yön tuşlarını kullanıp "cancel" demeniz gerekiyor. Dialog komutunundan dolayı kaynaklanmaktadır. 
+
+
 
 - **Liquid'i güncellemek için `update` komutunu kullanın.**
 
