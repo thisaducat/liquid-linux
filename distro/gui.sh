@@ -232,6 +232,8 @@ config() {
 	banner
 	sound_fix
 
+	if which xfce4-session >/dev/null; then
+    echo "xfce4 bulundu tema kuruluyor"
 	apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 3B4FE6ACC0B21F32
 	yes | apt upgrade
 	yes | apt install gtk2-engines-murrine gtk2-engines-pixbuf sassc optipng inkscape libglib2.0-dev-bin
@@ -253,7 +255,9 @@ config() {
 	tar -xvzf gtk.tar.gz -C "/usr/share/themes/"
 	tar -xvzf liquid-set.tar.gz -C "/home/$username/"	
 	rm -fr $temp_folder
-
+        else
+    echo "xfce4 bulunamadı. Atlanıyor..."
+fi
 	echo -e "${R} [${W}-${R}]${C} Gereksiz dosyalar parçalanıyor.."${W}
 	rem_theme
 	rem_icon
