@@ -41,7 +41,7 @@ note() {
 select_environment(){
 items=(1 "xfce4 (Normal)"
        2 "icewm (Hafif)"
-       3 "Hepsi (Yüksek depolama gerektirir)"
+       3 "gnome (ağır)"
        )
 
 while choice=$(dialog --title "Masaüstü KUR" \
@@ -51,7 +51,7 @@ while choice=$(dialog --title "Masaüstü KUR" \
     case $choice in
         1) package;;
         2) package_icewm;;
-	3) package_all;;
+	3) package_gnome;;
         *) clear; exit;;
     esac
 done
@@ -90,7 +90,7 @@ banner
 	dpkg --configure -a
 	apt-mark hold udisks2
 	
-	packs=(sudo icewm gnupg2 curl nano git xz-utils at-spi2-core xfce4 xfce4-goodies xfce4-terminal librsvg2-common menu inetutils-tools dialog exo-utils tigervnc-standalone-server tigervnc-common tigervnc-tools dbus-x11 fonts-beng fonts-beng-extra gtk2-engines-murrine gtk2-engines-pixbuf apt-transport-https)
+	packs=(sudo gnupg2 curl nano git xz-utils at-spi2-core gnome librsvg2-common menu inetutils-tools dialog exo-utils tigervnc-standalone-server tigervnc-common tigervnc-tools dbus-x11 fonts-beng fonts-beng-extra gtk2-engines-murrine gtk2-engines-pixbuf apt-transport-https)
 	for hulu in "${packs[@]}"; do
 		type -p "$hulu" &>/dev/null || {
 			echo -e "\n${R} [${W}-${R}]${G} Şu paket kuruluyor : ${Y}$hulu${W}"
