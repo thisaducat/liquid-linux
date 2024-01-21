@@ -1,2 +1,24 @@
 #!/usr/bin/env bash
-dbus-launch vncserver -geometry 1440x720 -depth 24 -zliblevel 0 -name LiquidOS -xstartup /usr/bin/xfce4-session
+clear
+if type /usr/bin/xfce4-session &> /dev/null; then
+    if type /usr/bin/icewm &> /dev/null; then
+        items=(1 "xfce4"
+       2 "icewm")
+
+while choice=$(dialog --title "Masaüstünü Seçin" \
+                 --menu "Lütfen kullanmak istediğiniz masaüstünü seçin." 10 40 3 "${items[@]}" \
+                 2>&1 >/dev/tty)
+    do
+    case $choice in
+        1) dbus-launch vncserver -geometry 1440x720 -depth 24 -zliblevel 0 -name LiquidOS -xstartup /usr/bin/xfce4-session;;
+        2) dbus-launch vncserver -geometry 1440x720 -depth 24 -zliblevel 0 -name LiquidOS -xstartup /usr/bin/icewm;;
+        *) clear; exit;;
+    esac
+done
+clear
+    else
+        dbus-launch vncserver -geometry 1440x720 -depth 24 -zliblevel 0 -name LiquidOS -xstartup /usr/bin/xfce4-session
+    fi
+else
+    dbus-launch vncserver -geometry 1440x720 -depth 24 -zliblevel 0 -name LiquidOS -xstartup /usr/bin/icewm
+fi
