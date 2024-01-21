@@ -47,7 +47,8 @@
 
 - `set-gui`
 
-- Ardından Liquid'i yeniden başlat ve her şey hazır :)
+- Ardından Liquid'i yeniden başlatın.
+- Masaüstü ortamını kullanmak için vnc ile bağlanmanız gerekiyor. VNC ile bağlanmak için `libaslat` yazın. Daha sonra vnc sunucusunun size verdiği numarayı vnc programına şu şekilde girin: `localhost:590?` ? işareti yerine görünen sayıyı yazın bu sayı genelde 1 olur.
 
 ### NOT :
 
