@@ -1,3 +1,75 @@
+#!/bin/bash
+
+# Function to check if a package is installed
+is_installed() {
+    dpkg -l | grep -q "$1"
+}
+
+# Define available desktop environments
+environments=("xfce4" "gnome" "icewm")
+
+# Filter installed environments
+installed_environments=()
+for environment in "${environments[@]}"; do
+    if is_installed "$environment"; then
+        installed_environments+=("$environment")
+    fi
+done
+
+# Display menu if environments are installed
+if [ ${#installed_environments[@]} -eq 0 ]; then
+    echo "Yüklü masaüstü ortamı bulunamadı.."
+else
+    # Construct options for dialog menu
+    options=()
+    for environment in "${installed_environments[@]}"; do
+        options+=("$environment" "")
+    done
+
+    # Show dialog menu
+    DE=$(dialog --title "Select Desktop Environment" --menu "Choose a desktop environment:" 12 50 6 "${options[@]}" 2>&1 >/dev/tty)
+
+    # Execute commands based on selected environment
+    case $DE in
+        "xfce4")
+            dbus-launch vncserver -geometry 1440x720 -depth 24 -zliblevel 0 -name LiquidOS -xstartup /usr/bin/xfce4-session
+            ;;
+        "gnome")
+            echo "You selected KDE."
+            ;;
+        "icewm")
+            dbus-launch vncserver -geometry 1440x720 -depth 24 -zliblevel 0 -name LiquidOS -xstartup /usr/bin/icewm
+            ;;
+        *)
+            echo "Seçim yanlış..."
+            ;;
+    esac
+fi
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #!/usr/bin/env bash
 clear
 if type /usr/bin/xfce4-session &> /dev/null; then
