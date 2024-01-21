@@ -37,6 +37,71 @@ note() {
 	EOF
 }
 
+select_environment(){
+items=(1 "xfce4 (Normal)"
+       2 "icewm (Hafif)"
+       3 "Hepsi (Yüksek depolama gerektirir)"
+       )
+
+while choice=$(dialog --title "Masaüstü KUR" \
+                 --menu "Lütfen kurmak istediğiniz masaüstünü seçin." 10 40 3 "${items[@]}" \
+                 2>&1 >/dev/tty)
+    do
+    case $choice in
+        1) package;;
+        2) package_icewm;;
+	3) package_all;;
+        *) clear; exit;;
+    esac
+done
+clear
+}
+
+package_icewm() {
+banner
+	echo -e "${R} [${W}-${R}]${C} Paketler kontrol ediliyor.."${W}
+	apt-get update -y
+	apt install udisks2 -y
+	rm /var/lib/dpkg/info/udisks2.postinst
+	echo "" > /var/lib/dpkg/info/udisks2.postinst
+	dpkg --configure -a
+	apt-mark hold udisks2
+	
+	packs=(sudo icewm gnupg2 curl nano git xz-utils at-spi2-core librsvg2-common menu inetutils-tools dialog exo-utils tigervnc-standalone-server tigervnc-common tigervnc-tools dbus-x11 fonts-beng fonts-beng-extra gtk2-engines-murrine gtk2-engines-pixbuf apt-transport-https)
+	for hulu in "${packs[@]}"; do
+		type -p "$hulu" &>/dev/null || {
+			echo -e "\n${R} [${W}-${R}]${G} Şu paket kuruluyor : ${Y}$hulu${W}"
+			apt-get install "$hulu" -y --no-install-recommends
+		}
+	done
+	
+	apt-get update -y
+	apt-get upgrade -y
+}
+
+package_all() {
+banner
+	echo -e "${R} [${W}-${R}]${C} Paketler kontrol ediliyor.."${W}
+	apt-get update -y
+	apt install udisks2 -y
+	rm /var/lib/dpkg/info/udisks2.postinst
+	echo "" > /var/lib/dpkg/info/udisks2.postinst
+	dpkg --configure -a
+	apt-mark hold udisks2
+	
+	packs=(sudo icewm gnupg2 curl nano git xz-utils at-spi2-core xfce4 xfce4-goodies xfce4-terminal librsvg2-common menu inetutils-tools dialog exo-utils tigervnc-standalone-server tigervnc-common tigervnc-tools dbus-x11 fonts-beng fonts-beng-extra gtk2-engines-murrine gtk2-engines-pixbuf apt-transport-https)
+	for hulu in "${packs[@]}"; do
+		type -p "$hulu" &>/dev/null || {
+			echo -e "\n${R} [${W}-${R}]${G} Şu paket kuruluyor : ${Y}$hulu${W}"
+			apt-get install "$hulu" -y --no-install-recommends
+		}
+	done
+	
+	apt-get update -y
+	apt-get upgrade -y
+}
+
+
 package() {
 	banner
 	echo -e "${R} [${W}-${R}]${C} Paketler kontrol ediliyor.."${W}
@@ -276,7 +341,7 @@ fi
 # ----------------------------
 
 check_root
-package
+select_environment
 install_softwares
 config
 note
