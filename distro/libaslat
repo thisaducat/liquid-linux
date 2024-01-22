@@ -37,6 +37,7 @@ else
         "gnome")
             export DISPLAY=:0
             export XDG_CURRENT_DIR=GNOME
+            for file in $(find /usr -type f -iname "*login1*"); do mv -v $file "$file.back"; done
 
             service dbus start
             gnome-shell --x11
