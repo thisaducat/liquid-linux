@@ -44,7 +44,7 @@
 
 - Kurulum tamamlandığında Liquid'i yeniden başlatın. Şuanda hazır sayılırsınız. Eğer masaüstü ortamı kurmak istiyorsanız aşağıdaki komutu yazın:
 
-- `set-gui`
+   - `set-gui`
 
 - Kurulum sırasında masaüstü ortamı seçme ekranında masaüstü ortamını yükledikten sonra tekrar masaüstü seçme ekranına atacaktır. Yön tuşları ile `cancel` demeniz gerekiyor. Bu bir bug değil. (Çoklu masaüstü ortamı kullanabilirsiniz.) 
 - Masaüstü ortamını kullanmak `libaslat` yazıp istediğiniz masaüstü ortamını seçmeniz gerekecek. Seçtikten sonra değişik yazılar yazmaya başlayacak korkmanıza gerek yok bu sadece masaüstünün çalıştığını gösterir.
