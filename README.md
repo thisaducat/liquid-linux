@@ -19,7 +19,7 @@
 
 ### Özellikleri
 
-- Grafik hızlandırması bulunuyor. (Hardware Acceleration [3D]-[X11]) ---> (ŞUANLIK ÇALIŞMIYOR)
+- Grafik hızlandırması bulunuyor. (Hardware Acceleration [3D]-[X11])
 - Ses Desteği Bulunuyor (Masaüstü ortamı ile)
 - Hafif {En az 4GB Alanınızın bulunması gerekiyor(Masaüstü ortamı ile) }
 - Font Desteği var
@@ -27,8 +27,8 @@
 
 ### Kurulum
 - İlk önce Termux indirmeniz gerekiyor. [BURADAN İNDİRİN](https://f-droid.org/repo/com.termux_118.apk) (Play Store'de bulunan sorunlu)
-- Kurulum dosyalarını indirin & Kurulum dosyasını çalıştırın.
-
+- Daha sonra masaüstü ortamını grafik hızlandırıcısını kullanarak görüntülemek için Termux:x11 yüklemeniz gerekiyor. [BURADAN İNDİRİN](https://github.com/termux/termux-x11/releases/tag/nightly)
+- Termux'a girin kurulum dosyalarını indirin & Kurulum dosyasını çalıştırın.
   - `apt update`
   - `apt install git wget ncurses-utils -y`
   - `git clone --depth=1 https://github.com/thisaducat/liquid-linux.git`
@@ -36,7 +36,7 @@
   - `chmod +x *`
   - `./kur`
 
-- Ardından Termux'u yeniden başlatın.
+- Kurulduktan sonra ˋliquidˋ yazarak sanal ortama giriş yapın ve şunları yazın
 
    - `liquid`
    - `set-liquid`
