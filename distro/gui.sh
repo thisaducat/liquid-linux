@@ -41,7 +41,7 @@ note() {
 select_environment(){
 items=(1 "xfce4 (Normal)"
        2 "icewm (Hafif)"
-       3 "gnome (ağır)"
+       #3 "gnome (ağır)"
        )
 
 while choice=$(dialog --title "Masaüstü KUR" \
@@ -51,14 +51,14 @@ while choice=$(dialog --title "Masaüstü KUR" \
     case $choice in
         1) package;;
         2) package_icewm;;
-	3) package_gnome;;
+	#3) package_gnome;;
         *) clear; exit;;
     esac
 done
 clear
 }
 
-package_gnome() {
+#package_gnome() {
 banner
 	echo -e "${R} [${W}-${R}]${C} Paketler kontrol ediliyor.."${W}
 	apt-get update -y
