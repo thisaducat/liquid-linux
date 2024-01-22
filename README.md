@@ -36,19 +36,24 @@
   - `chmod +x *`
   - `./kur`
 
-- Kurulduktan sonra ˋliquidˋ yazarak sanal ortama giriş yapın ve şunları yazın
+- Kurulduktan sonra `liquid` yazarak sanal ortama giriş yapın ve şunları yazın:
 
    - `liquid`
    - `set-liquid`
 
 - Kullanıcı Adı ve Şifresi girin [Küçük harflerle & Boşluk kullanmadan]
 
-- Liquid'i yeniden başlatın. Şu komutu yazın:
+- Kurulum tamamlandığında Liquid'i yeniden başlatın. Şuanda hazır sayılırsınız. Eğer masaüstü ortamı kurmak istiyorsanız aşağıdaki komutu yazın:
 
 - `set-gui`
 
-- Ardından Liquid'i yeniden başlatın.
-- Masaüstü ortamını kullanmak için vnc ile bağlanmanız gerekiyor. VNC ile bağlanmak için `libaslat` yazın. Daha sonra vnc sunucusunun size verdiği numarayı vnc programına şu şekilde girin: `localhost:590?` ? işareti yerine görünen sayıyı yazın bu sayı genelde 1 olur.
+- Kurulum sırasında masaüstü ortamı seçme ekranında masaüstü ortamını yükledikten sonra tekrar masaüstü seçme ekranına atacaktır. Yön tuşları ile `cancel` demeniz gerekiyor. Bu bir bug değil. (Çoklu masaüstü ortamı kullanabilirsiniz.) 
+- Masaüstü ortamını kullanmak `libaslat` yazıp istediğiniz masaüstü ortamını seçmeniz gerekecek. Seçtikten sonra değişik yazılar yazmaya başlayacak korkmanıza gerek yok bu sadece masaüstünün çalıştığını gösterir.
+
+Örneğin;
+<img src="./distro/gnome.png">
+Bu GNOME masaüstü ortamını başlatırken çıkan yazı. Bu yazıların benzeri XFCE4 ve ICEWM masaüstü ortamlarındada oluyor.
+  
 
 ### NOT :
 
