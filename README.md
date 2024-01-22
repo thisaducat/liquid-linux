@@ -56,7 +56,7 @@ Bu GNOME masaüstü ortamını başlatırken çıkan yazı. Bu yazıların benze
 
 ### NOT :
 
-ÖNEMLİ: Kurulum, masaüstü ortamını seçip yükledikten sonra tekrar masaüstü ortamı seçme kısmına atıyor oradan yön tuşlarını kullanıp "cancel" demeniz gerekiyor. Dialog komutunundan dolayı kaynaklanmaktadır. 
+Eğer masaüstü ortamını başlatırken `Can't open display ':0'` hatası alırsanız ayarlardan Termux'u durdurmaya zorla'ya basın.
 
 
 
