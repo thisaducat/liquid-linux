@@ -51,7 +51,7 @@
 - Masaüstü ortamını kullanmak `libaslat` yazıp istediğiniz masaüstü ortamını seçmeniz gerekecek. Seçtikten sonra değişik yazılar yazmaya başlayacak korkmanıza gerek yok bu sadece masaüstünün çalıştığını gösterir.
 
 Örneğin;
-<img src="./distro/gnome.png">
+<img src="./distro/gnome.jpg">
 Bu GNOME masaüstü ortamını başlatırken çıkan yazı. Bu yazıların benzeri XFCE4 ve ICEWM masaüstü ortamlarındada oluyor.
   
 
