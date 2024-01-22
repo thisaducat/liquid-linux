@@ -43,6 +43,8 @@ login() {
     cp "/data/data/com.termux/files/home/liquid-linux/distro/logo" "/liquid/logo"
     cp "/data/data/com.termux/files/home/liquid-linux/distro/boot" "/liquid/boot"
     echo "termux-x11 :0 >/dev/null &" > "/data/data/com.termux/files/home/.bashrc"
+    echo "sleep 2" > "/data/data/com.termux/files/home/.bashrc"
+    echo "clear" > "/data/data/com.termux/files/home/.bashrc"
     echo "clear" > "/home/$user/.bashrc"
     echo "/liquid/boot" > "/home/$user/.bashrc"
     chmod +x "/liquid/boot"
