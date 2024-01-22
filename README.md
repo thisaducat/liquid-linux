@@ -38,7 +38,6 @@
 
 - Kurulduktan sonra `liquid` yazarak sanal ortama giriş yapın ve şunları yazın:
 
-   - `liquid`
    - `set-liquid`
 
 - Kullanıcı Adı ve Şifresi girin [Küçük harflerle & Boşluk kullanmadan]
