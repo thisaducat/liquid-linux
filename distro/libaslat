@@ -32,9 +32,11 @@ else
     # Execute commands based on selected environment
     case $DE in
         "xfce4")
-            dbus-launch vncserver -geometry 1440x720 -depth 24 -zliblevel 0 -name LiquidOS -xstartup /usr/bin/xfce4-session
+            export DISPLAY=:0
+            dbus-launch --exit-with-session startxfce4 &
             ;;
         "gnome")
+            clear
             export DISPLAY=:0
             export XDG_CURRENT_DIR=GNOME
             for file in $(find /usr -type f -iname "*login1*"); do mv -v $file "$file.back"; done
@@ -43,7 +45,8 @@ else
             gnome-shell --x11
             ;;
         "icewm")
-            dbus-launch vncserver -geometry 1440x720 -depth 24 -zliblevel 0 -name LiquidOS -xstartup /usr/bin/icewm
+            export DISPLAY=:0
+            dbus-launch --exit-with-session icewm &
             ;;
         *)
             echo ""
