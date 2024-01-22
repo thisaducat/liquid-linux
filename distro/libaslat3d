@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-export DISPLAY=:0
-dbus-launch --exit-with-session startxfce4 &
