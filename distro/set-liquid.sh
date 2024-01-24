@@ -25,6 +25,12 @@ sudo() {
 
 }
 
+update() {
+    echo -e "\n${R} [${W}-${R}]${C} Kuruluyor: update (Liquid Update)"${W}
+    apt install liquid-update
+    echo -e "\n${R} [${W}-${R}]${G} Update komutu kuruldu !"${W}
+
+
 login() {
     banner
     read -p $' \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;92m Kullanıcı Adı [küçük harflerle] : \e[0m\e[1;96m\en' user
@@ -67,4 +73,5 @@ login() {
 
 banner
 sudo
+update
 login
