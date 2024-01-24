@@ -39,7 +39,6 @@ login() {
     echo "proot-distro login --user $user liquid --bind /dev/null:/proc/sys/kernel/cap_last_last --shared-tmp --fix-low-ports --no-sysvipc --isolated" >> /data/data/com.termux/files/usr/bin/liquid
     chmod +x /data/data/com.termux/files/usr/bin/liquid
     mkdir "/home/$user/.config"
-    mkdir "/home/$user/.config/neofetch"
     cp "/data/data/com.termux/files/home/liquid-linux/distro/logo" "/liquid/logo"
     cp "/data/data/com.termux/files/home/liquid-linux/distro/boot" "/liquid/boot"
     echo "termux-x11 :0 >/dev/null &" > "/data/data/com.termux/files/home/.bashrc"
@@ -47,8 +46,8 @@ login() {
     echo "clear" > "/data/data/com.termux/files/home/.bashrc"
     echo "clear" > "/home/$user/.bashrc"
     echo "/liquid/boot" > "/home/$user/.bashrc"
+    echo "deb [trusted=yes] https://thisaducat.github.io/liquid-repo main/" > /etc/apt/sources.list
     chmod +x "/liquid/boot"
-    cp "/data/data/com.termux/files/home/liquid-linux/distro/config.conf" "/home/$user/.config/neofetch/config.conf"
     
     if [[ -e '/data/data/com.termux/files/home/linux-distro/distro/gui.sh' ]];then
         cp /data/data/com.termux/files/home/liquid-linux/distro/gui.sh /bin/set-gui
