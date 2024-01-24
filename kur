@@ -281,17 +281,13 @@ permission() {
 
 	chmod +x $UBUNTU_DIR/bin/set-liquid
 
-	setup_vnc
+	#setup_vnc
 
 	echo "$(getprop persist.sys.timezone)" > $UBUNTU_DIR/etc/timezone
 
 	echo "proot-distro login liquid" > $PREFIX/bin/liquid
 
 	chmod +x "$PREFIX/bin/liquid"
-
-        cp $CURR_DIR/distro/update.sh $UBUNTU_DIR/bin/update
-
-        chmod +x $UBUNTU_DIR/bin/update
 
         mkdir $UBUNTU_DIR/liquid
 
