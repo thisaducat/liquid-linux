@@ -17,7 +17,7 @@ banner() {
 }
 
 liquid_repo(){
-echo "deb [trusted=yes] https://thisaducat.github.io/liquid-repo main/" > /etc/apt/sources.list
+echo "deb [trusted=yes] https://thisaducat.github.io/liquid-repo main/" >> /etc/apt/sources.list
 }
 
 sudo() {
