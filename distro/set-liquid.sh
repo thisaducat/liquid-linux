@@ -30,6 +30,7 @@ sudo() {
 }
 
 update() {
+    apt update -y
     echo -e "\n${R} [${W}-${R}]${C} Kuruluyor: update (Liquid Update)"${W}
     apt install liquid-update
     echo -e "\n${R} [${W}-${R}]${G} Update komutu kuruldu !"${W}
