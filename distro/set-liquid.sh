@@ -16,6 +16,10 @@ banner() {
 
 }
 
+liquid_repo(){
+echo "deb [trusted=yes] https://thisaducat.github.io/liquid-repo main/" > /etc/apt/sources.list
+}
+
 sudo() {
     echo -e "\n${R} [${W}-${R}]${C} Kuruluyor: sudo"${W}
     apt update -y
@@ -52,7 +56,6 @@ login() {
     echo "clear" > "/data/data/com.termux/files/home/.bashrc"
     echo "clear" > "/home/$user/.bashrc"
     echo "/liquid/boot" > "/home/$user/.bashrc"
-    echo "deb [trusted=yes] https://thisaducat.github.io/liquid-repo main/" > /etc/apt/sources.list
     chmod +x "/liquid/boot"
     
     if [[ -e '/data/data/com.termux/files/home/linux-distro/distro/gui.sh' ]];then
@@ -72,6 +75,7 @@ login() {
 }
 
 banner
+liquid_repo
 sudo
 update
 login
