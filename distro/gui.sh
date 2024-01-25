@@ -67,7 +67,7 @@ banner
 	dpkg --configure -a
 	apt-mark hold udisks2
 	
-	packs=(sudo liquid-desktop-environment gnome gnupg2 curl nano git xz-utils at-spi2-core librsvg2-common menu inetutils-tools dialog exo-utils tigervnc-standalone-server tigervnc-common tigervnc-tools dbus-x11 fonts-beng fonts-beng-extra gtk2-engines-murrine gtk2-engines-pixbuf apt-transport-https)
+	packs=(liquid-desktop-environment gnome gnupg2 nano git xz-utils at-spi2-core librsvg2-common menu inetutils-tools dialog exo-utils dbus-x11 fonts-beng fonts-beng-extra gtk2-engines-murrine gtk2-engines-pixbuf apt-transport-https)
 	for hulu in "${packs[@]}"; do
 		type -p "$hulu" &>/dev/null || {
 			echo -e "\n${R} [${W}-${R}]${G} Şu paket kuruluyor : ${Y}$hulu${W}"
@@ -89,7 +89,7 @@ banner
 	dpkg --configure -a
 	apt-mark hold udisks2
 	
-	packs=(sudo liquid-desktop-environment icewm gnupg2 curl nano git xz-utils at-spi2-core librsvg2-common menu inetutils-tools dialog exo-utils tigervnc-standalone-server tigervnc-common tigervnc-tools dbus-x11 fonts-beng fonts-beng-extra gtk2-engines-murrine gtk2-engines-pixbuf apt-transport-https)
+	packs=(liquid-desktop-environment xfce4-terminal icewm gnupg2 nano git xz-utils at-spi2-core librsvg2-common menu inetutils-tools dialog exo-utils dbus-x11 fonts-beng fonts-beng-extra gtk2-engines-murrine gtk2-engines-pixbuf apt-transport-https)
 	for hulu in "${packs[@]}"; do
 		type -p "$hulu" &>/dev/null || {
 			echo -e "\n${R} [${W}-${R}]${G} Şu paket kuruluyor : ${Y}$hulu${W}"
@@ -111,7 +111,7 @@ banner
 	dpkg --configure -a
 	apt-mark hold udisks2
 	
-	packs=(sudo liquid-desktop-environment gnupg2 curl nano git xz-utils at-spi2-core gnome librsvg2-common menu inetutils-tools dialog exo-utils tigervnc-standalone-server tigervnc-common tigervnc-tools dbus-x11 fonts-beng fonts-beng-extra gtk2-engines-murrine gtk2-engines-pixbuf apt-transport-https)
+	packs=(liquid-desktop-environment gnupg2 nano git xz-utils at-spi2-core gnome librsvg2-common menu inetutils-tools dialog exo-utils tigervnc-standalone-server tigervnc-common tigervnc-tools dbus-x11 fonts-beng fonts-beng-extra gtk2-engines-murrine gtk2-engines-pixbuf apt-transport-https)
 	for hulu in "${packs[@]}"; do
 		type -p "$hulu" &>/dev/null || {
 			echo -e "\n${R} [${W}-${R}]${G} Şu paket kuruluyor : ${Y}$hulu${W}"
@@ -134,7 +134,7 @@ package() {
 	dpkg --configure -a
 	apt-mark hold udisks2
 	
-	packs=(sudo liquid-desktop-environment gnupg2 curl nano git xz-utils at-spi2-core xfce4 xfce4-goodies xfce4-terminal librsvg2-common menu inetutils-tools dialog exo-utils tigervnc-standalone-server tigervnc-common tigervnc-tools dbus-x11 fonts-beng fonts-beng-extra gtk2-engines-murrine gtk2-engines-pixbuf apt-transport-https)
+	packs=(liquid-desktop-environment gnupg2 nano git xz-utils at-spi2-core xfce4 xfce4-goodies xfce4-terminal librsvg2-common menu inetutils-tools dialog exo-utils dbus-x11 fonts-beng fonts-beng-extra gtk2-engines-murrine gtk2-engines-pixbuf apt-transport-https)
 	for hulu in "${packs[@]}"; do
 		type -p "$hulu" &>/dev/null || {
 			echo -e "\n${R} [${W}-${R}]${G} Şu paket kuruluyor : ${Y}$hulu${W}"
