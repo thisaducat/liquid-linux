@@ -31,10 +31,9 @@ note() {
 	sleep 1
 	cat <<- EOF
 		 ${G}[-] Masaüstü ortamını başlatmak için ${C}libaslat${G} yazın.
-                 ${G}[-] Grafik hızlandırılmış masaüstü ortamını başlatmak için ${C}libaslat3d${G} yazın.
 		 ${G}[-] Masaüstü ortamını kapatmak için ${C}likapat${G} yazın.
 
-		 ${C}Masaüstü ortamının tadını çıkar :)${W}
+		 ${C}Masaüstü ortamının tadını çıkar.${W}
 	EOF
 }
 
