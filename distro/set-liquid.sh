@@ -52,11 +52,11 @@ login() {
     mkdir "/home/$user/.config"
     cp "/data/data/com.termux/files/home/liquid-linux/distro/logo" "/liquid/logo"
     cp "/data/data/com.termux/files/home/liquid-linux/distro/boot" "/liquid/boot"
-    echo "termux-x11 :0 >/dev/null &" > "/data/data/com.termux/files/home/.bashrc"
-    echo "sleep 2" > "/data/data/com.termux/files/home/.bashrc"
-    echo "clear" > "/data/data/com.termux/files/home/.bashrc"
-    echo "clear" > "/home/$user/.bashrc"
-    echo "/liquid/boot" > "/home/$user/.bashrc"
+    echo "termux-x11 :0 >/dev/null &" >> "/data/data/com.termux/files/home/.bashrc"
+    echo "sleep 2" >> "/data/data/com.termux/files/home/.bashrc"
+    echo "clear" >> "/data/data/com.termux/files/home/.bashrc"
+    echo "clear" >> "/home/$user/.bashrc"
+    echo "/liquid/boot" >> "/home/$user/.bashrc"
     chmod +x "/liquid/boot"
     
     if [[ -e '/data/data/com.termux/files/home/linux-distro/distro/gui.sh' ]];then
