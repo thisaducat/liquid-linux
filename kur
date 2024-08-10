@@ -127,7 +127,7 @@ package() {
 
 		yes | pkg upgrade
 
-		packs=(pulseaudio proot-distro proot)
+		packs=(pulseaudio proot-distro x11-repo termux-x11-nightly proot)
 
 		for x in "${packs[@]}"; do
 
@@ -304,8 +304,6 @@ permission() {
         pkg install x11-repo
 
         pkg install xwayland xorg-server-xvfb
-
-        dpkg -i $CURR_DIR/distro/termux-x11-nightly-1.02.12-0-all.deb
 
         cp $CURR_DIR/distro/termux.properties $HOME/.termux/termux.properties
 
