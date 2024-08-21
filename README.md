@@ -3,7 +3,7 @@
 </p>
 <p align="center">
 <img src="https://img.shields.io/badge/MADE%20IN-TURKEY-white?colorA=%23ff0000&colorB=%23017e40&style=for-the-badge">
-<img src="https://img.shields.io/badge/Version-1.0-blue?style=for-the-badge">
+<img src="https://img.shields.io/badge/Version-1.1-blue?style=for-the-badge">
 </p>
 <p align="center">
 <img src="https://img.shields.io/badge/Written%20In-Bash-darkgreen?style=flat-square">
