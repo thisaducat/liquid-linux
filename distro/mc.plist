@@ -19,7 +19,7 @@
                     <key>needs-shine</key>
                     <false/>
                     <key>url</key>
-                    <string>disp.img</string>
+                    <string>https://github.com/thisaducat/liquid-linux/blob/main/distro/GIbGSEKWcAAHc3e.png</string>
                 </dict>
                 <dict>
                     <key>kind</key>
@@ -27,7 +27,7 @@
                     <key>needs-shine</key>
                     <false/>
                     <key>url</key>
-                    <string>full.img</string>
+                    <string>https://github.com/thisaducat/liquid-linux/blob/main/distro/GIbGSEKWcAAHc3e.png</string>
                 </dict>
             </array>
             <key>metadata</key>
@@ -39,7 +39,7 @@
                 <key>kind</key>
                 <string>software</string>
                 <key>title</key>
-                <string>Minecraft</string>
+                <string>Minecraft PE</string>
             </dict>
         </dict>
     </array>
