@@ -33,13 +33,13 @@
             <key>metadata</key>
             <dict>
                 <key>bundle-identifier</key>
-                <string>com.mojang.minecraft</string>
+                <string>com.mojang.minecraftpe</string>
                 <key>bundle-version</key>
-                <string>1.0.0</string>
+                <string>1.21.44</string>
                 <key>kind</key>
                 <string>software</string>
                 <key>title</key>
-                <string>minecraft</string>
+                <string>Minecraft</string>
             </dict>
         </dict>
     </array>
